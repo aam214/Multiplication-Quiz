@@ -1,29 +1,38 @@
 const questionFormat = document.getElementById("question");
 const inputNumber = document.getElementById("input");
 const form = document.getElementById("form");
-
+const scoreBoard = document.getElementById("score");
 
 const number1 = Math.ceil(Math.random() * 10);
 const number2 = Math.ceil(Math.random() * 10);
-let score = 0;
 
+let score = JSON.parse(localStorage.getItem("score"));
+
+if (!score) {
+  score = 0;
+}
 const rightAnswer = number1 * number2;
+
+questionFormat.innerHTML = 
+`What is ${number1} <i class="fa-solid fa-xmark"></i> ${number2}?`
+
 
 form.addEventListener("submit", () => {
   const userAnswer = +inputNumber.value;
 if (userAnswer === rightAnswer) {
   score ++;
-
-  alert("Correct!🎉🎊✨🤩");
   console.log(score);
-} else {
+  updateStorage()
+  alert("Correct!🎉🎊✨🤩");
 
-  alert("Try Again!");
+} else {
   score--;
   console.log(score);
+  updateStorage()
+  alert("Try Again!");
 }
 })
 
-questionFormat.innerHTML = 
-`What is ${number1} <i class="fa-solid fa-xmark"></i> ${number2}?`
-
+function updateStorage() {
+  localStorage.setItem("score", JSON.stringify(score))
+}
