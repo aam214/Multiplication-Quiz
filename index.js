@@ -5,8 +5,24 @@ const form = document.getElementById("form");
 
 const number1 = Math.ceil(Math.random() * 10);
 const number2 = Math.ceil(Math.random() * 10);
+let score = 0;
 
 const rightAnswer = number1 * number2;
+
+form.addEventListener("submit", () => {
+  const userAnswer = +inputNumber.value;
+if (userAnswer === rightAnswer) {
+  score ++;
+
+  alert("Correct!🎉🎊✨🤩");
+  console.log(score);
+} else {
+
+  alert("Try Again!");
+  score--;
+  console.log(score);
+}
+})
 
 questionFormat.innerHTML = 
 `What is ${number1} <i class="fa-solid fa-xmark"></i> ${number2}?`
