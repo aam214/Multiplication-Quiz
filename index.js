@@ -11,6 +11,8 @@ let score = JSON.parse(localStorage.getItem("score"));
 if (!score) {
   score = 0;
 }
+scoreBoard.innerHTML =
+`<i class="fa-solid fa-star"></i> Score: ${score}`;
 const rightAnswer = number1 * number2;
 
 questionFormat.innerHTML = 
