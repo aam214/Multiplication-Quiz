@@ -1,12 +1,13 @@
 .body{
-  background-color: rgb(88, 151, 46); 
+  background-image: url(blue-background.jpg);
+  background-position: center;
+ background-size: cover;
+
 }
 header{
   padding: 20px 80px 20px 80px;
-  background-color: #0669C6;
+  background-color:rgb(171, 199, 22);
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
-  margin: 10px;
-  border-radius: 8px;
   text-align: center;
   margin-bottom: 40px;
 }
